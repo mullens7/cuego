@@ -13,7 +13,7 @@ The QR print action uses `api.qrserver.com` to render a QR image from the public
 
 ## Multi-tenant ordering foundation
 
-This repository remains one static application on the existing Vercel project and one Supabase project. Apply the numbered `supabase/` SQL migrations in order before deploying corresponding frontend changes. Migrations 003–009 were applied to the existing Cuego Supabase project on 1 October 2026. They preserve legacy `venues` and orders while representing each venue as a location within an organisation.
+This repository remains one static application on the existing Vercel project and one Supabase project. Apply the numbered `supabase/` SQL migrations in order before deploying corresponding frontend changes. Migrations 003–010 were applied to the existing Cuego Supabase project on 1 October 2026. They preserve legacy `venues` and orders while representing each venue as a location within an organisation.
 
 - `/manage` (or legacy `/admin`) signs staff in and creates an organisation with its first location. A signed-in owner can create menus, tables, modifiers and station assignments.
 - `/order/{organisationSlug}/{locationSlug}/table/{tableLabel}` is the fallback table QR URL. A single-location organisation can omit the location slug on the entry screen.
