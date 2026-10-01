@@ -1,1 +1,1 @@
-{"rewrites":[{"source":"/admin/:path*","destination":"/index.html"},{"source":"/v/:path*","destination":"/index.html"}]}
+{"rewrites":[{"source":"/admin/:path*","destination":"/index.html"},{"source":"/manage/:path*","destination":"/index.html"},{"source":"/display/:path*","destination":"/index.html"},{"source":"/v/:path*","destination":"/index.html"},{"source":"/order/:path*","destination":"/index.html"},{"source":"/table/:path*","destination":"/index.html"}]}
