@@ -35,3 +35,9 @@
   .shop-item{gap:8px}.shop-item .btn{min-width:68px}
 }
 @media(max-width:390px){.top .shell{flex-wrap:wrap;padding-block:9px;min-height:64px}.topnav{margin-left:auto}.shop-item{flex-wrap:wrap}}
+
+/* Use the supplied Cuego artwork, including its original proportions. */
+.brand{display:flex;align-items:center;flex:none;min-height:44px;width:190px;line-height:0;overflow:hidden}
+.brand:before{display:none}
+.brand img{display:block;width:100%;height:auto}
+@media(max-width:480px){.brand{width:154px}.top .shell{flex-wrap:nowrap}.topnav{min-width:0;flex-wrap:wrap;justify-content:flex-end}.topnav .btn.small{min-height:44px}}

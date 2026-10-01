@@ -10,7 +10,7 @@ async function req(path,body){let r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{m
 const rows=(table,query)=>req(`${table}?${query}`);
 function theme(){let l=state.location;document.documentElement.style.setProperty('--venue-primary',l.primary_colour);document.documentElement.style.setProperty('--venue-accent',l.accent_colour);document.title=`Order at ${l.name} | Cuego`;}
 function brand(){let l=state.location;return `<div class="venue-brand">${l.logo_url?`<img src="${esc(l.logo_url)}" alt="${esc(l.name)}" onerror="this.style.display='none'">`:''}<strong>${esc(l.name)}</strong></div>`}
-function powered(){return '<footer class="venue-powered">Powered by <strong>Cuego</strong></footer>'}
+function powered(){return '<footer class="venue-powered">Powered by <a href="https://www.cuego.co.uk" aria-label="Cuego"><img src="/assets/cuego-logo.webp" alt="Cuego" width="1000" height="333" loading="lazy"></a></footer>'}
 function show(html){app.innerHTML=html}
 function baseScreen(inner){show(`<div class="venue-app">${inner}${powered()}</div>`)}
 function statusMessage(msg){let el=document.querySelector('.venue-alert');if(el)el.textContent=msg;else alert(msg)}
