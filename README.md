@@ -24,3 +24,9 @@ This repository remains one static application on the existing Vercel project an
 The original pay-at-venue flow under `/v/{slug}/order` remains for compatibility. Do not use it as a live paid checkout. The first Victory Inn tenant still requires an authenticated owner to create it and its actual venue menu to be entered; no fake owner account or published menu data was inserted.
 
 The frontend has no package manager, lint script, test runner or build step. Validate its JavaScript with `node --check app.js customer.js display.js config.js` (one file per invocation); the Vercel deployment serves these modules and styles as static assets. Exercise customer and staff flows at 320px, 375px, 430px and tablet width when a test tenant is available.
+
+## Reserved administrator and venue accounts
+
+Migration 011 privately reserves the platform role for `freddie@mullens.com` and the first Victory Inn owner role for `freddiemullenuk@icloud.com`. These reservations create no password and do not bypass email confirmation. On verified signup, the venue reservation creates the organisation, Hamble location, Bar/Kitchen stations and Table 12. Other venue accounts cannot call the protected platform overview RPC. The trigger and reservation tables are outside the exposed API schema.
+
+Use `/superadmin` for the platform account and `/manage` for the venue account. Choose a password via Create account and confirm the email. `/account/reset` requests recovery; `/account/password` handles a valid recovery session. Supabase Auth Site URL should be `https://www.cuego.co.uk` with that site's `/manage` and `/account/password` allowed as redirect URLs. No invite emails were sent by this deployment.
