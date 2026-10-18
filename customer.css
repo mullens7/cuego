@@ -17,9 +17,11 @@
 .venue-app[data-theme="classic"] .venue-button{background:var(--venue-accent);color:var(--venue-primary);border-radius:6px;min-height:54px}
 .venue-app[data-theme="classic"] .menu-header{background:var(--venue-primary);color:#fff;border:0;flex-wrap:wrap;gap:8px}
 .venue-app[data-theme="classic"] .menu-header .venue-brand{padding:0;font-family:Georgia,serif;font-weight:500;flex:1;letter-spacing:.01em;font-size:1.2rem}
+.venue-app[data-theme="classic"] .menu-header{flex-wrap:nowrap}.venue-app[data-theme="classic"] .menu-header .delivery-pill{flex:none;max-width:104px}
 .venue-app[data-theme="classic"] .delivery-pill{background:#ffffff16;color:#fff;border:1px solid #ffffff30;white-space:normal}
 .venue-app[data-theme="classic"] .delivery-pill strong{display:block;color:var(--venue-accent);margin-top:2px}
 .venue-app[data-theme="classic"] .menu-title h1{font-size:clamp(2rem,7.5vw,2.8rem)}
+.venue-app[data-theme="classic"] .menu-main{padding-top:18px}.venue-app[data-theme="classic"] .menu-title{align-items:center}.venue-app[data-theme="classic"] .menu-title h1{margin-bottom:14px}.venue-app[data-theme="classic"] .menu-demo-note{margin-bottom:14px;padding-bottom:10px}
 .venue-app[data-theme="classic"] .category-strip{background:#faf8f2;border-color:#dedbd1}
 .venue-app[data-theme="classic"] .category-strip a{background:#eeeade;color:#38362c;min-height:44px;display:flex;align-items:center}
 .venue-app[data-theme="classic"] .menu-product{border-color:#e0dcd1;padding:20px 0}
@@ -39,4 +41,5 @@
 .modifier-option input{min-height:20px;flex:none}.basket-line>strong{white-space:nowrap}.basket-line button{min-height:44px}
 @media(max-width:390px){.venue-app[data-theme="classic"] .menu-header{flex-direction:row;align-items:center}.venue-app[data-theme="classic"] .menu-header .venue-brand{flex:1 1 175px}.venue-app[data-theme="classic"] .menu-header .venue-brand img{width:54px;height:54px}.venue-app[data-theme="classic"] .menu-header .venue-brand strong{font-size:1.04rem}.venue-app[data-theme="classic"] .delivery-pill{font-size:.75rem;padding:6px 8px}.product-sheet-bottom{flex-wrap:wrap}.product-sheet-bottom .venue-button{min-width:150px}.venue-app[data-theme="classic"] .table-entry .venue-brand img{width:116px;height:116px}}
 @media(max-height:650px){.venue-app[data-theme="classic"] .table-entry .venue-brand img{width:88px;height:88px}.venue-app[data-theme="classic"] .table-prompt{padding-top:25px}.venue-app[data-theme="classic"] .table-prompt h1{font-size:2.1rem;margin-bottom:20px}.venue-powered{padding-block:8px}}
+@media(max-width:390px){.venue-app[data-theme="classic"] .menu-header .venue-brand{flex:1 1 0}.venue-app[data-theme="classic"] .menu-header .venue-brand img{width:44px;height:44px}.venue-app[data-theme="classic"] .menu-header .venue-brand strong{font-size:1rem}}
 
