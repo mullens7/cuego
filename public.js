@@ -2,6 +2,7 @@
 let searchVersion = 0;
 
 export function guestPage(render, request, escapeHtml) {
+  document.title = 'Cuego | Order from your table';
   searchVersion++;
   render(`<main class="guest-home"><div class="guest-orbit" aria-hidden="true"></div><div class="guest-content shell">
     <p class="guest-kicker"><span class="guest-dot"></span> TABLE SERVICE, MADE SIMPLE</p>
@@ -38,6 +39,7 @@ export function guestPage(render, request, escapeHtml) {
 const venueNav = '<div class="venues-subnav"><a href="/forvenues" data-link>Overview</a><a href="/forvenues/how-it-works" data-link>How it works</a><a href="/forvenues/pricing" data-link>Pricing</a><a href="/forvenues/contact" data-link>Contact</a></div>';
 
 export function forVenuesPage(render, page) {
+  document.title = `${({'':'For venues','how-it-works':'How it works','pricing':'Pricing','contact':'Contact'}[page] || 'For venues')} | Cuego`;
   const content = {
     '': `<p class="venues-eyebrow">CUEGO FOR VENUES</p><h1>More service.<br><em>Less waiting.</em></h1><p class="venues-lead">Give your guests a simple way to order from their table, and give your team a clearer view of what needs doing.</p><div class="venues-actions"><a class="btn" href="/forvenues/how-it-works" data-link>See how it works <span aria-hidden="true">→</span></a><a class="venues-text-link" href="/manage" data-link>Venue sign in <span aria-hidden="true">↗</span></a></div><div class="venues-steps"><div><span>01</span><h2>One scan</h2><p>Guests open your menu from a table QR code, with their table already selected.</p></div><div><span>02</span><h2>One smooth order</h2><p>They choose what they want on their phone, with clear prices and options.</p></div><div><span>03</span><h2>One live view</h2><p>Your team sees incoming orders and moves them through service.</p></div></div>`,
     'how-it-works': `<p class="venues-eyebrow">HOW IT WORKS</p><h1>From table to team.</h1><p class="venues-lead">Cuego connects your menu, tables and service screen in one place.</p><div class="venues-steps"><div><span>01</span><h2>Set up your venue</h2><p>Add tables, menu categories, products and availability in your management area.</p></div><div><span>02</span><h2>Let guests order</h2><p>A table QR opens your branded menu. Guests can also find your venue on Cuego and enter their table.</p></div><div><span>03</span><h2>Keep service moving</h2><p>Orders reach the staff display, where the team can prepare and complete them.</p></div></div><p class="venues-note">A demonstration mode is available while online payments are being connected. It is clearly marked and never charges a guest.</p>`,
