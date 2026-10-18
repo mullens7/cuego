@@ -36,3 +36,17 @@ Use `/superadmin` for the platform account and `/manage` for the venue account. 
 ## Public guest entry
 
 Migration 012 adds `find_ordering_venues(text)`, a limited public lookup of name and route slugs for locations currently accepting orders. The homepage searches after two characters and sends a guest to `/order/{organisationSlug}/{locationSlug}`. It never displays dormant or paused venues, and does not guess a venue from the generic Cuego host. A venue must be onboarded, populated and switched to accepting orders before it appears. Venue account creation remains in `/manage`, linked from the For venues page.
+
+## Victory Inn demonstration (18 October 2026)
+
+- `/order/thevictoryinn` identifies the table; `/order/thevictoryinn/table/12` opens the menu directly.
+- `/display/thevictoryinn` is the authenticated Bar/Kitchen display.
+- `/admin/thevictoryinn` manages products, prices, availability, modifiers, tables, branding and stations.
+- The confirmed platform administrator has an explicit membership for this demo. The reserved iCloud account gains owner membership after verified signup; no password was fabricated and no confirmation was bypassed.
+- The uploaded `VI-Square-B.webp` is preserved unchanged at `assets/venues/thevictoryinn/logo.webp`.
+- Food names and prices were transcribed from the main menu image linked by https://thevictoryinn.co.uk/eat on 18 October 2026. Descriptions were shortened. Drinks names were informed by https://thevictoryinn.co.uk/drink; drinks prices, soft drinks and glass sizes are illustrative demo data, not a verified live drinks menu. The ordering UI labels prices as preview data. No allergen-free claims were inferred.
+- Demo checkout uses trusted database prices, modifier validation, stock checks, idempotency and station routing. The legacy pay-at-venue RPC rejects demo locations.
+- Customer status/display poll every three seconds; menu changes refresh every five seconds while the menu is visible and no dialog is open. This remains polling, not Supabase Realtime subscriptions.
+- The two timestamped migrations in `supabase/migrations/` follow numbered files 001–012 in `supabase/`; apply in that order on a new database. Both were applied to the existing project. Existing tenant data was preserved.
+- `qa/mobile.html` provides actual 320px, 375px and 430px iframe viewports against the shared app for responsive flow checks. It contains no authentication bypass or private data.
+- The future ordering domain is not configured or marked verified. Later, add the Vercel/DNS domain and its verified mapping to this location; the same app and database will serve it.
