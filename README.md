@@ -3,6 +3,8 @@
 Static, dependency-free frontend with Supabase Auth, PostgREST and a transactional order RPC. Vercel serves `index.html` for admin and customer routes. Database schema is in `supabase/` and applied to the Cuego Supabase project.
 
 ## Routes
+- `/` — guest welcome and search for a venue currently accepting orders. Table QR links continue directly to the venue menu.
+- `/forvenues` — venue-facing introduction with `/forvenues/how-it-works`, `/forvenues/pricing` and `/forvenues/contact`.
 - `/admin` — email/password sign in, venue creation and venue list.
 - `/admin/{venue}` — overview, orders, menu and tables.
 - `/v/{venue}/order?table={table_uuid}` — customer ordering page.
@@ -30,3 +32,7 @@ The frontend has no package manager, lint script, test runner or build step. Val
 Migration 011 privately reserves the platform role for `freddie@mullens.com` and the first Victory Inn owner role for `freddiemullenuk@icloud.com`. These reservations create no password and do not bypass email confirmation. On verified signup, the venue reservation creates the organisation, Hamble location, Bar/Kitchen stations and Table 12. Other venue accounts cannot call the protected platform overview RPC. The trigger and reservation tables are outside the exposed API schema.
 
 Use `/superadmin` for the platform account and `/manage` for the venue account. Choose a password via Create account and confirm the email. `/account/reset` requests recovery; `/account/password` handles a valid recovery session. Supabase Auth Site URL should be `https://www.cuego.co.uk` with that site's `/manage` and `/account/password` allowed as redirect URLs. No invite emails were sent by this deployment.
+
+## Public guest entry
+
+Migration 012 adds `find_ordering_venues(text)`, a limited public lookup of name and route slugs for locations currently accepting orders. The homepage searches after two characters and sends a guest to `/order/{organisationSlug}/{locationSlug}`. It never displays dormant or paused venues, and does not guess a venue from the generic Cuego host. A venue must be onboarded, populated and switched to accepting orders before it appears. Venue account creation remains in `/manage`, linked from the For venues page.
