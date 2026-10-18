@@ -34,6 +34,7 @@
 .product-dialog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .cue-sheet-wrap[data-theme="classic"] h2{font-family:Georgia,serif;font-weight:500}.cue-sheet-wrap[data-theme="classic"] .venue-button{background:var(--venue-accent);color:var(--venue-primary)}
 .sheet-close{flex:none;width:44px;height:44px;border:0;border-radius:50%;background:#f2f0ea;font-size:1.5rem;color:#24231f}
+.venue-app .venue-button{font-weight:750}.confirmation-line{padding:8px 0;border-bottom:1px solid #ece9e1}.confirmation-line p{margin:0 0 5px}.confirmation-line small{color:#716a60;display:block}.product-sheet-bottom .venue-button{font-size:.9rem}
 .cue-sheet{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
 .modifier-option input{min-height:20px;flex:none}.basket-line>strong{white-space:nowrap}.basket-line button{min-height:44px}
 @media(max-width:390px){.venue-app[data-theme="classic"] .menu-header{flex-direction:row;align-items:center}.venue-app[data-theme="classic"] .menu-header .venue-brand{flex:1 1 175px}.venue-app[data-theme="classic"] .menu-header .venue-brand img{width:54px;height:54px}.venue-app[data-theme="classic"] .menu-header .venue-brand strong{font-size:1.04rem}.venue-app[data-theme="classic"] .delivery-pill{font-size:.75rem;padding:6px 8px}.product-sheet-bottom{flex-wrap:wrap}.product-sheet-bottom .venue-button{min-width:150px}.venue-app[data-theme="classic"] .table-entry .venue-brand img{width:116px;height:116px}}
